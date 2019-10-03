@@ -9,10 +9,10 @@
   </div>
   <div *ngFor="let data of endpoints">
     <div *ngIf="plataformaSelec === data.plataforma">
-      <p [(ngModel)]="data.valor" [ngValue]="data.valor">
+      <p>
         Valor: {{data.valor}}
       </p>
-      <p [(ngModel)]="data.codigo">
+      <p>
         Codigo: {{data.codigo}}
       </p>
     </div>
