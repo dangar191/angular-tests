@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <p>Plataforma: 
+      <select [(ngModel)]="plataformaSelec" (ngModelChange)="plataformaSeleccionada($event)">
+        <option *ngFor="let plataformas of endpoints">
+            {{plataformas.plataforma}}
+        </option>
+      </select></p>
+  </div>
+  <div *ngFor="let data of endpoints">
+    <div *ngIf="plataformaSelec === data.plataforma">
+      <p [(ngModel)]="data.valor" [ngValue]="data.valor">
+        Valor: {{data.valor}}
+      </p>
+      <p [(ngModel)]="data.codigo">
+        Codigo: {{data.codigo}}
+      </p>
+    </div>
+  </div>
+  <br>
+  <div>
+    <button type="button">
+      Enviar
+    </button>
+  </div>
+</div>
