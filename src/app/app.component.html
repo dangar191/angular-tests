@@ -2,13 +2,13 @@
   <div>
     <p>Plataforma: 
       <select [(ngModel)]="plataformaSelec" (ngModelChange)="plataformaSeleccionada($event)">
-        <option *ngFor="let plataformas of endpoints">
+        <option *ngFor="let plataformas of endpoints" [ngValue]="plataformas.codigo">
             {{plataformas.plataforma}}
         </option>
       </select></p>
   </div>
   <div *ngFor="let data of endpoints">
-    <div *ngIf="plataformaSelec === data.plataforma">
+    <div *ngIf="plataformaSelec === data.codigo">
       <p *ngFor="let dataCE of data.campos">{{dataCE.etiqueta}}: <label><input [(ngModel)]="dataCE.campo" type="text"></label></p>
     </div>
   </div>
