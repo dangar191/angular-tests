@@ -9,6 +9,31 @@ export class AppComponent implements OnInit {
 
   public plataformaSelec: string;
 
+  endpoints = [
+    {
+      plataforma: 'Nortel',
+      valor: '1',
+      codigo: '1',
+      campos: [
+        {
+          campo: 'X_VLAN',
+          etiqueta: 'VLAN/ID'
+        }
+      ]
+    },
+    {
+      plataforma: 'Alcatel',
+      valor: '1',
+      codigo: '2',
+      campos: [
+        {
+          campo: 'Y_VLAN2',
+          etiqueta: 'VLAN/ID2'
+        }
+      ]
+    }
+  ];
+
     
   ngOnInit () {
   }
@@ -16,6 +41,11 @@ export class AppComponent implements OnInit {
 
   submitPrueba() {
   
+  }
+
+  trackByIndex(index: number, obj: any): any {
+    return index;
+    console.log('El index del trackby es: ' + index);
   }
 
   plataformaSeleccionada(valorSelect: any) {

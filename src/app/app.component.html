@@ -9,12 +9,7 @@
   </div>
   <div *ngFor="let data of endpoints">
     <div *ngIf="plataformaSelec === data.plataforma">
-      <p>
-        Valor: {{data.valor}}
-      </p>
-      <p>
-        Codigo: {{data.codigo}}
-      </p>
+      <p *ngFor="let dataCE of data.campos">{{dataCE.etiqueta}}: <label><input [(ngModel)]="dataCE.campo" type="text"></label></p>
     </div>
   </div>
   <br>
