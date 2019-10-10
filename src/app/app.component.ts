@@ -43,10 +43,7 @@ export class AppComponent implements OnInit {
   
   }
 
-  trackByIndex(index: number, obj: any): any {
-    return index;
-    console.log('El index del trackby es: ' + index);
-  }
+
 
   plataformaSeleccionada(valorSelect: any) {
     this.valorSelect(valorSelect);
