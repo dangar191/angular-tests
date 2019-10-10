@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  plataforma: string;
+    plataforma: any;
   valor: string;
   codigo: string;
   campo: string;
@@ -22,6 +22,10 @@ export class AppComponent implements OnInit {
         {
           campo: "X_VLAN",
           etiqueta: "VLAN/ID"
+        },
+        {
+          campo: "X_VLANA",
+          etiqueta: "VLAN/IDA"
         }
       ]
     },
@@ -33,6 +37,10 @@ export class AppComponent implements OnInit {
         {
           campo: "Y_VLAN2",
           etiqueta: "VLAN/ID2"
+        },
+        {
+          campo: "Y_VLANB",
+          etiqueta: "VLAN/IDB"
         }
       ]
     }
@@ -43,13 +51,14 @@ export class AppComponent implements OnInit {
   }
 
   submitPrueba() {
-    const data = [
-      {
-        plataforma: this.plataforma,
-        campo: this.campo
-      }
-    ];
+    const item = this.endpoints[this.plataforma - 1];
+  
+    const data = [{
+      plataforma: this.plataforma,
+      campos : item.campos
+    }];
     console.log(data);
+
   }
 
   valorInput(valorInput: any){
