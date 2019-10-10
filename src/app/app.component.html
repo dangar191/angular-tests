@@ -9,12 +9,12 @@
   </div>
   <div *ngFor="let data of endpoints">
     <div *ngIf="plataforma === data.codigo">
-      <p *ngFor="let dataCE of data.campos">{{dataCE.etiqueta}}: <label><input [(ngModel)]="dataCE.campo" type="text"></label></p>
+      <p *ngFor="let dataCE of data.campos">{{dataCE.etiqueta}}: <label><input [(ngModel)]="dataCE.campo" (ngModelChange)="valorInput($event)" type="text"></label></p>
     </div>
   </div>
   <br>
   <div>
-    <button type="button">
+    <button (click)="submitPrueba()" type="button">
       Enviar
     </button>
   </div>

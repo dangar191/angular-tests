@@ -43,11 +43,17 @@ export class AppComponent implements OnInit {
   }
 
   submitPrueba() {
-    this.endpoints.forEach(res => {
-      if (this.plataforma === res.codigo) {
-        console.log(res.plataforma);
+    const data = [
+      {
+        plataforma: this.plataforma,
+        campo: this.campo
       }
-    });
+    ];
+    console.log(data);
+  }
+
+  valorInput(valorInput: any){
+    console.log('El valor del input es: ' + valorInput);
   }
 
   valorSelect(valorSelect: any) {
